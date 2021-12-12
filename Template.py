@@ -259,10 +259,10 @@ def write_prediction(predict_results, test_image_list, test_faces_rects, train_n
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         cv2.rectangle(image, (x,y), (x+w, y+h), (255,255,0), 1)
         if(check_attandee(train_names[res], room)):
-            text = train_names[res] + ' : ' + str("Present")
+            text = train_names[res] + ' - ' + str("Present")
             cv2.putText(image, text, (x-65,y+5), cv2.FONT_HERSHEY_PLAIN, 1, (0,255,0), 2)
         else:
-            text = train_names[res] + ' : ' + str("Shouldn't be here")
+            text = train_names[res] + ' - ' + str("Shouldn't be here")
             cv2.putText(image, text, (x-65,y+5), cv2.FONT_HERSHEY_PLAIN, 1, (255,0,0), 2)
         predicted_test_image_list.append(image)
     
