@@ -3,8 +3,6 @@ import os
 import numpy as np
 from matplotlib import pyplot as plt
 
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-
 def get_train_image(path):
     '''
         To get a list of train images, images label, and images index using the given path
@@ -111,7 +109,7 @@ def detect_faces_and_filter(faces_list, labels_list=None):
     face_list_gray = []
     label_list_gray = []
     image_gray_location = []
-
+    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
     if(labels_list != None): #Training
         for (idx, img) in zip(labels_list, faces_list):
             img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
