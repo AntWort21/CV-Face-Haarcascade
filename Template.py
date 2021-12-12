@@ -1,3 +1,6 @@
+#Aditya Winata  | 2301854252
+#Daryl          | 2301856346
+
 import cv2
 import os
 import numpy as np
